@@ -1,6 +1,9 @@
 // private endpoints go here
 const currentUser = (req, res) => {
-  return res.send('accessed private endpoint')
+  console.log(req.user)
+  return res.send({
+    currentUser: req.user
+  })
 }
 
 module.exports = {

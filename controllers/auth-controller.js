@@ -7,6 +7,7 @@ const register = async (req, res) => {
   if (username && password) {
     try {
       const query = await User.findOne({ name: username })
+      console.log(query)
       if (query === null) {
         const user = await generateUser(username, password, role)
         const token = await generateAccessToken(user)

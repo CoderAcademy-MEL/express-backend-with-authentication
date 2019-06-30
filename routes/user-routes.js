@@ -11,7 +11,7 @@ const checkAccessToken = (req, res, next) => {
       return res.status(403).send('incorrect token');
     } else {
       // you have access to decoded here
-      console.log(decoded)
+      req.user = decoded
       next()
     }
   })
