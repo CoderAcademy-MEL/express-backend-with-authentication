@@ -15,8 +15,7 @@ const generateUser = async (username, password, role) => {
   const hash = await generateHash(password)
   const newUser = new User({
     name: username,
-    password: hash,
-    role: role
+    password: hash
   })
   return await newUser.save()
 }

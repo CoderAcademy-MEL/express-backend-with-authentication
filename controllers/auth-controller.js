@@ -15,6 +15,7 @@ const register = async (req, res) => {
         return res.status(403).send('user already exists')
       }
     } catch(err) {
+      console.log(err)
       return res.status(404).send('an error occurred')
     }
   } else {
