@@ -11,7 +11,7 @@ const checkPassword = async (password, hash) => {
   return await bcrypt.compare(password, hash)
 }
 
-const generateUser = async (username, password, role) => {
+const generateUser = async (username, password) => {
   const hash = await generateHash(password)
   const newUser = new User({
     name: username,

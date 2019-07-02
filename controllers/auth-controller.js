@@ -3,13 +3,13 @@ const { checkPassword, generateUser, generateAccessToken } = require('../utils/a
 
 // register post endpoint
 const register = async (req, res) => {
-  const { username, password, role } = req.body
+  const { username, password } = req.body
   if (username && password) {
     try {
       const query = await User.findOne({ name: username })
       console.log(query)
       if (query === null) {
-        const user = await generateUser(username, password, role)
+        const user = await generateUser(username, password)
         const token = await generateAccessToken(user)
         return res.send({ token })
       } else {
