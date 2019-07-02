@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = new express();
 
 // replace with your own database name
-const dbName = 'countries-app'
+const dbName = 'users-database-again'
 
 mongoose.connect(`mongodb://localhost:27017/${dbName}`, { useNewUrlParser: true }, (err) => {
   if (err) {
